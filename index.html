@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO</title>
+</head>
+<style>
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* li a:hover:not(.active) {
+  background-color: rgb(17, 17, 17);
+} */
+.contenedor{
+  display: inline-block;
+  padding:5px;
+  box-sizing: border-box;
+  float:left;
+}
+.tamano-1{
+  width:100%;
+  height:400px;
+}
+img{
+  object-fit: cover;
+  width:100%;
+  height:100%;
+}
+div {
+  float: left;
+  padding: 15px; 
+}
+
+.div1 {
+  width:30%;
+  height: 200PX;
+  margin-right: 1%;
+  /* background: red; */
+}
+
+.div2 {
+  width:30%;
+  height: 220PX;
+  margin-right: 1%;
+  /* background: yellow; */
+}
+
+.div3 {
+  width:30%;
+  height: 200PX;
+  margin: 0%;
+  padding: 0%;
+  /* background: green; */
+}
+.active{
+  background-color: #4CAF50;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* s--------------------------------------------- */
+ol {
+  counter-reset: li; 
+  list-style: none; 
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+ol a {
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  margin: .5em 0;
+  background: #DAD2CA;
+  color: #444;
+  text-decoration: none;
+  border-radius: .3em;
+  transition: .3s ease-out;
+}
+
+ol a:hover { background: #E9E4E0; }
+ol a:hover:before { transform: rotate(360deg); }
+ol a:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -1.3em;
+  top: 50%;
+  margin-top: -1.3em;
+  background: #f9dd94;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border: .3em solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  transition: all .3s ease-out;
+}
+/* ------------------------------------- */
+.container{
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  /* padding: 30px; */
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.slider{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+.menu{
+  text-align: center;
+  /* margin: 20px; */
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  /* padding: 10px; */
+  width: 20px;
+  /* height: 20px; */
+  font-size: 20px;
+  border-radius: 100%;
+}
+/* -------------------------------------------- */
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+/* body { margin: 0; }  */
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  /* height: 10%; */
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+</style>
+<body>
+  <ul>
+    <li><a class="active" href="#home">Inicio</a></li>
+    <li><a href="#news">Sobre Nosotros</a></li>
+    <li><a href="#contact">Galeria</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li style="float:right"><a href="#about">BIENVENID@ <span id="lbResultado"></span></a></li>
+  </ul>
+    <div id="slider">
+    <figure class="tamano-1">
+    <img src="assets/cuarta.jpg" alt>
+    <img src="assets/segunda.jpg" alt>
+    <img src="assets/quinta.jpg" alt>
+    <img src="assets/secta.jpg" alt>
+    <img src="assets/septima.jpg" alt>
+    </figure>
+  </div>
+    <br>
+    <div class="contenedor">
+      <div class="div1">
+        <label for="fname">INICIAR SESION</label>
+        <input type="text" name="firstname" placeholder="Ingrese nombre usuario" id="user">
+        <input type="submit" value="Ingresar" onclick="mostrar()">
+      </div>
+      <div class="div2"> <img src="assets/desimo.jpg" alt="perrito"></div>
+      <div class="div3">
+        <p style="font-weight: bold;">Comentarios de clientes: </p>
+        <p>"Preciosa tienda y con cosas maravillosas para fiestas para peques y adultos."</p>
+        <p>"Toda una experiencia, un placer ver como tranforman los espacios. Mucho gusto y cuidan mucho los detalles. La atención esquisita y los precios muy buenos. Lo recomendaré!!"</p>
+        <p>"Estoy encantada cada vez que compro. Todo lo que tiene es ideal, los pedidos me llegan en el plazo acordado y la calidad es excelente. ¡Encantada!"</p>
+      </div>
+    </div>
+    <div class="contenedor" style="margin-top: 5%;">
+      <div class="div1">
+        <ol>
+          <li class=""><a href="#">Productos de consumo accesibles</a></li>
+          <li class=""><a href="#">Productos de regalo para todas edades</a></li>
+          <li class=""><a href="#">Promociones y regalos por la compra mayor a 1.000bs</a></li>
+          <li class=""><a href="#">Descuentos</a></li>
+      </ol>
+      </div>
+      <div class="div2">
+        <p>"Felicitaros por el servicio impecable que he recibido de vosotros. Ha llegado en menos de 24 hrs. todo perfecto. Sin duda repetiré. Saludos."</p>
+        <p>"Hice un pedido por la web, y al día siguiente lo tenía en la puerta de casa. Todo genial, y vi en la web que tienen un mundo de cosas, genial!"</p>
+      </div>
+      <div class="div3">
+        <label for="fname">Conversor Dolar a BS / BS A DOLAR</label>
+        <input type="number" placeholder="Bs" id="bs">
+        <input type="number" placeholder="$" id="dol" disabled>
+
+            <button id="btn1" >CONVERTIR DE BS A $</button>
+            <script src="funciones.js"></script>
+      </div>
+    </div>
+    <script src="funcions.js">
+      
+    </script>
+</body>
+</html>
