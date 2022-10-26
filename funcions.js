@@ -4,12 +4,12 @@ let btn2 = document.getElementById("btn2");
 btn1.addEventListener("click", function() {
     let bs = document.getElementById("bs").value;
     let dol = document.getElementById("dol");
-    dol.value = bs / 6.98;
+    dol.value = bs / 6.96;
 });
 btn2.addEventListener("click", function() {
     let bs = document.getElementById("bs");
     let dol = document.getElementById("dol").value;
-    bs.value = dol / 0.14;
+    bs.value = dol / 0.14367816091954022;
 });
 function mostrar() {
     var user = document.getElementById("user").value;
